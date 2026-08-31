@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tom Guo — Portfolio</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/mino32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/mino16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/mino-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -259,7 +262,7 @@
     color:var(--text-soft);
   }
   .links{
-    display:flex; gap:14px; margin-top:22px;
+    display:flex; gap:14px; flex-wrap:wrap;
   }
   .links a{
     font-family:var(--font-mono);
@@ -267,6 +270,34 @@
     text-decoration:none;
     border-bottom:1px solid var(--city-accent, var(--text-soft));
     padding-bottom:2px;
+  }
+
+  .panel-footer{
+    flex:0 0 auto;
+    padding:14px clamp(22px,4vw,36px);
+    border-top:1px solid var(--panel-border);
+    background:var(--panel-bg);
+    transition:background 0.4s ease, border-color 0.4s ease;
+  }
+
+  .profile-photos{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    margin:4px 0 20px;
+  }
+  .profile-photo{
+    width:250px;
+    height: 300px;
+    border-radius:20px;
+    object-fit:cover;
+    object-position:center;
+    image-rendering:auto;
+    border:1px solid var(--panel-border);
+    box-shadow:0 10px 24px rgba(0,0,0,0.22);
+  }
+  @media (max-width:420px){
+    .profile-photo{width:92px; height:92px;}
   }
 
   .subtabs{
@@ -387,15 +418,18 @@
         <div class="panel-view active" id="view-about">
           <h1 class="name">Tom Guo</h1>
           <p class="role">Masters Candidate interested in Quantitative Research</p>
+          <div class="profile-photos">
+            <img class="profile-photo" src="assets/grad_photo.jpeg">
+          </div>
           <p class="bio">
             I am a M.S. candidate in Mathematics in Finance at <strong>NYU Courant</strong>, with a B.Math from the <strong>University of Waterloo</strong>. 
             My academic background spans pure mathematics, applied mathematics, financial mathematics, computer science, and statistics. 
             I especially enjoy exploring ideas deeply, learning new concepts, and using mathematical and computational tools to understand complex problems.
             I am particularly interested in work that allows me to research, learn, and solve open-ended problems.
-           
-            <!-- Add image here
-                 <img src="assets/headshot.jpg" alt="Tom Guo" style="width:96px;height:96px;border-radius:50%;object-fit:cover;margin-bottom:14px;"> -->
           </p>
+          <div class="profile-photos">
+            <img class="profile-photo" src="assets/professional_headshot.png">
+          </div>
           <p class="bio">
             I have completed five internships across three sectors: finance, research, and software. 
             Across these experiences, I have worked on <strong>quantitative research</strong>, <strong>machine learning</strong>, 
@@ -414,12 +448,6 @@
             <span class="meta-pill">Statistics</span>
             <span class="meta-pill">Finance</span>
             <span class="meta-pill">Computer Science</span>
-          </div>
-          <div class="links">
-            <a href="mailto:tomguo@nyu.edu">Email</a>
-            <a href="assets/Courant Resume.pdf">Résumé</a>
-            <a href="https://www.linkedin.com/in/tg2guo/">LinkedIn</a>
-            <a href="https://github.com/tomjyguo">GitHub</a>
           </div>
         </div>
 
@@ -625,6 +653,15 @@
               <div class="project-tags"><span class="tag">Python</span></div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div class="panel-footer">
+        <div class="links">
+          <a href="mailto:tomguo@nyu.edu">Email</a>
+          <a href="assets/Courant Resume.pdf">Résumé</a>
+          <a href="https://www.linkedin.com/in/tg2guo/">LinkedIn</a>
+          <a href="https://github.com/tomjyguo">GitHub</a>
         </div>
       </div>
     </section>
